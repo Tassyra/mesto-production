@@ -9,7 +9,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Mesto</title>
     
-    <script type="module" crossorigin src="./assets/index-40ceddf5.js"></script>
+    <script type="module" crossorigin src="./assets/index-8cc153e1.js"></script>
     <link rel="stylesheet" href="./assets/index-f5e79df5.css">
   </head>
   <body class="page">
@@ -49,21 +49,29 @@
           <form class="popup__form" name="edit-profile">
             <label class="popup__label">
               <input
-                type="text"
-                name="user-name"
-                id="user-name"
-                class="popup__input popup__input_type_name"
-                placeholder="Имя"
-              />
+                 type="text"
+                 name="user-name"
+                 id="user-name"
+                 class="popup__input popup__input_type_name"
+                 placeholder="Имя"
+                 required
+                minlength="2"
+                maxlength="40"
+                pattern="^[A-Za-zА-Яа-яЁё\s-]+$"
+                  />
               <span class="user-name-error popup__error"></span> 
             </label>
             <label class="popup__label">
-              <input
+                <input
                 type="text"
                 name="user-description"
                 id="user-description"
                 class="popup__input popup__input_type_description"
                 placeholder="Занятие"
+                required
+                minlength="2"
+                maxlength="200"
+                pattern="^[A-Za-zА-Яа-яЁё\s-]+$"
               />
               <span class="user-description-error popup__error"></span>
             </label>
@@ -85,25 +93,28 @@
           <h3 class="popup__title">Новое место</h3>
           <form class="popup__form" name="new-place">
             <label class="popup__label">
-              <input
+             <input
                 type="text"
                 name="place-name"
                 id="place-name"
-                required 
-                minlength="2"
                 class="popup__input popup__input_type_card-name"
                 placeholder="Название"
+                required
+                minlength="2"
+                maxlength="30"
+                pattern="^[A-Za-zА-Яа-яЁё\s-]+$"
               />
               <span class="place-name-error popup__error"></span>
             </label>
             <label class="popup__label">
-              <input
-                type="url"
-                name="place-link"
-                id="place-link"
-                class="popup__input popup__input_type_url"
-                placeholder="Ссылка на картинку"
-              />
+             <input
+                  type="url"
+                  name="place-link"
+                  id="place-link"
+                  class="popup__input popup__input_type_url"
+                  placeholder="Ссылка на картинку"
+                  required
+                />
               <span class="place-link-error popup__error"></span>
             </label>
             <button
@@ -151,6 +162,7 @@
                 id="user-avatar"
                 class="popup__input popup__input_type_avatar"
                 placeholder="Ссылка на изображение"
+                required
               />
               <span class="user-avatar-error popup__error"></span>
             </label>
@@ -200,19 +212,27 @@
   <div class="popup-info__definition">
     <div class="popup-info__stat-item">
       <span class="popup-info__stat-label">Всего пользователей:</span>
-      <span class="popup-info__stat-value">0</span>
+      <span class="popup-info__stat-value popup-info__total-users">
+  0
+</span>
     </div>
     <div class="popup-info__stat-item">
       <span class="popup-info__stat-label">Всего лайков:</span>
-      <span class="popup-info__stat-value">0</span>
+      <span class="popup-info__stat-value popup-info__total-likes">
+  0
+</span>
     </div>
     <div class="popup-info__stat-item">
       <span class="popup-info__stat-label">Максимально лайков от одного:</span>
-      <span class="popup-info__stat-value">0</span>
+      <span class="popup-info__stat-value popup-info__max-likes">
+  0
+</span>
     </div>
     <div class="popup-info__stat-item">
       <span class="popup-info__stat-label">Чемпион лайков:</span>
-      <span class="popup-info__stat-value">—</span>
+      <span class="popup-info__stat-value popup-info__champion">
+  —
+</span>
     </div>
     <div class="popup-info__top-cards">
       <h4 class="popup-info__top-cards-title">Популярные карточки:</h4>
